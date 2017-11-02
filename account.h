@@ -1,23 +1,25 @@
-#include <iostream>
+// Base class of Savings, Checking, and Certificate
+// Contains the minimum variables and methods required for a bank account
 
 using namespace std;
 
 class Account
 {
-    int     actNum;
-    float   interest;
-    double  balance;
+    protected:
+        const int   actNum;
+        float       interest;
+        double      balance;
 
     public:
         // constructors
         Account();
-        Account(int, float, double);
+        Account(int num, float inter, double bal);
 
         // destructor
         ~Account();
 
         // methods
-        int withdraw(double);
-        int deposit(float);
-        int display() const;
+        int withdraw(double sum);
+        int deposit(double sum);
+        int display();
 };
