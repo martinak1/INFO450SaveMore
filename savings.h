@@ -18,5 +18,5 @@ class Savings : public Account
         ~Savings();
 
         // methods
-        int compound();
+        int AssessInterest();
 };
