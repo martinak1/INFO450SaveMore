@@ -1,14 +1,16 @@
 // Base class of Savings, Checking, and Certificate
 // Contains the minimum variables and methods required for a bank account
 
-using namespace std;
+#ifndef PET_H
+#define PET_H
+
 
 class Account
 {
     protected:
-        const int   actNum;
-        float       interest;
-        double      balance;
+        int     actNum;
+        float   interest;
+        double  balance;
 
     public:
         // constructors
@@ -23,3 +25,5 @@ class Account
         int deposit(double sum);
         int display();
 };
+
+#endif

@@ -7,6 +7,8 @@
  * charged a fee of $2, deducted from the balance at the time of withdrawal.
  */
 
+#include "account.h"
+
 
 class Savings : public Account
 {
@@ -19,4 +21,5 @@ class Savings : public Account
 
         // methods
         int AssessInterest();
+        int withdraw(double sum);
 };
