@@ -12,14 +12,18 @@
 
 class CertDeposit : public Account
 {
-    //constructors
-    CertDeposit();
-    CertDeposit(int num, float inter, double bal);
+    protected:
+        int term;
 
-    // destructor
-    ~CertDeposit();
+    public:
+        //constructors
+        CertDeposit();
+        CertDeposit(int num, float inter, double bal, int trm);
+
+        // destructor
+        ~CertDeposit();
  
-   // methods
-   AssessInterest();
-   withdraw(double sum);
+        // methods
+        int AssessInterest();
+        int withdraw(double sum);
 };

@@ -40,8 +40,8 @@ int Savings::withdraw(double sum)
 {
     if(sum + 2 > balance)
     {   
-        cout << "The amount you would like to withdraw exceeds your balance\
-                 \n\tBalance: " << balance << endl;
+        cout << "The amount you would like to withdraw plus fees exceeds your\
+            balance \n\tBalance: " << balance << endl;
         return -1; 
     }   
    else if(sum <= 0)
@@ -50,5 +50,10 @@ int Savings::withdraw(double sum)
         return -1; 
    }   
                                     
+   cout << "\nTransaction successfull. A $2.00 fee was applied for withdrawing\
+       from a savings account" << endl;
+
    balance -= balance - sum - 2;                          
+
+   return 0;
 }
