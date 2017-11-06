@@ -9,21 +9,21 @@ using namespace std;
 
 Account::Account()
 {
-    actNum   = 0;
-    interest = 0;
+    actNum   = openAccounts + 1;
     balance  = 0;
+    openAccounts++;
 }
 
-Account::Account(int num, float inter, double bal)
+Account::Account(double bal)
 {
-    actNum      = num;
-    interest    = inter;
+    actNum      = openAccounts+1;
     balance     = bal;
+    openAccounts++;
 }
 
 Account::~Account()
 {
-    cout << "Kill me!" << endl;
+    --openAccounts;
 }
 
 /* methods
@@ -70,8 +70,14 @@ int Account::deposit(double sum)
 // print account information
 int Account::display()
 {
-   cout << "Account #: " << actNum << "\nBalance: " << balance 
-        << "\nInterest Rate: " << interest << "\n" << endl;
-    
-   return 0; 
+   cout << "\nAccount ID:\t\t" << actNum 
+        << "\n\tBalance:\t" << balance 
+        << endl;
+}
+
+int Account::openAccounts = 0;
+
+int Account::getCount()
+{
+    return openAccounts;
 }

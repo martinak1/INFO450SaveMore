@@ -12,9 +12,11 @@
 
 class Savings : public Account
 {
+    protected:
+        float interest;
     public:
         Savings();
-        Savings(int num, float inter, double bal);
+        Savings(double bal);
 
         // destructor
         ~Savings();
@@ -22,4 +24,5 @@ class Savings : public Account
         // methods
         int AssessInterest();
         int withdraw(double sum);
+        int display();
 };

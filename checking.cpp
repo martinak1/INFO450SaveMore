@@ -9,8 +9,13 @@ Checking::Checking() : Account()
 {
 }
 
-Checking::Checking(int num, float inter, double bal) : Account(num, inter, bal)
+Checking::Checking(double bal) : Account(bal)
 {
+}
+
+Checking::~Checking()
+{
+    cout << "Killed: " << actNum << endl;
 }
 
 int Checking::withdraw(double sum)

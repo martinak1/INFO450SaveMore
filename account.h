@@ -9,13 +9,13 @@ class Account
 {
     protected:
         int     actNum;
-        float   interest;
         double  balance;
+        static int openAccounts;
 
     public:
         // constructors
         Account();
-        Account(int num, float inter, double bal);
+        Account(double bal);
 
         // destructor
         ~Account();
@@ -24,6 +24,7 @@ class Account
         int withdraw(double sum);
         int deposit(double sum);
         int display();
+        int getCount();
 };
 
 #endif

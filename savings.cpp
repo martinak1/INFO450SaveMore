@@ -12,8 +12,18 @@ Savings::Savings() : Account()
 }
 
 
-Savings::Savings(int num, float inter, double bal) : Account(num, inter, bal)
+Savings::Savings(double bal) : Account(bal)
 {
+    if(bal >= 10000)
+        interest = .02f/12;
+    else
+        interest = .01f/12;
+}
+
+
+Savings::~Savings()
+{
+    cout << "Killed: " << actNum << endl;
 }
 
 
@@ -40,8 +50,8 @@ int Savings::withdraw(double sum)
 {
     if(sum + 2 > balance)
     {   
-        cout << "The amount you would like to withdraw plus fees exceeds your\
-            balance \n\tBalance: " << balance << endl;
+        cout << "The amount you would like to withdraw plus fees exceeds your"
+             << "balance \n\tBalance: " << balance << endl;
         return -1; 
     }   
    else if(sum <= 0)
@@ -50,10 +60,18 @@ int Savings::withdraw(double sum)
         return -1; 
    }   
                                     
-   cout << "\nTransaction successfull. A $2.00 fee was applied for withdrawing\
-       from a savings account" << endl;
+   cout << "\nTransaction successfull. A $2.00 fee was applied for withdrawing"
+        << "from a savings account" << endl;
 
    balance -= balance - sum - 2;                          
 
    return 0;
+}
+
+int Savings::display()
+{
+    cout << "\nAccount ID:\t\t" << actNum
+         << "\n\tBalance:\t$" << balance
+         << "\n\tInterest:\t" << interest
+         << endl;
 }

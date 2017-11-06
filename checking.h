@@ -14,7 +14,7 @@ class Checking : public Account
     public:
         // constructors
         Checking();
-        Checking(int num, float inter, double bal);
+        Checking(double bal);
 
         // destructor
         ~Checking();
