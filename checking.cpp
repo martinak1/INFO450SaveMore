@@ -22,8 +22,8 @@ int Checking::withdraw(double sum)
 {
     if(sum > balance)
     {
-        cout << "The amount you would like to withdraw exceeds your balance\
-            \n\tBalance: " << balance << endl;
+        cout << "The amount you would like to withdraw exceeds your balance"
+             << "\n\tBalance: " << balance << endl;
         return -1; 
     }
     else if(sum <= 0)
@@ -31,12 +31,23 @@ int Checking::withdraw(double sum)
         cout << "You can not withraw less thang $0.01.\n\tBalance: " << balance;
         return -1;
     }
-    else if( balance - sum < 500)
+    else if(balance - sum < 500)
     {
-        cout << "This withdrawl will reduce your balance to bellow $500, there\
-            is a chage of $5.00" << endl;
+        cout << "This withdrawl will reduce your balance to bellow $500, there"
+             << "is a chage of $5.00" << endl;
         balance -= 5;
     }
 
-    balance -= balance - sum;
+    balance -= sum;
+    cout << "Transaction Successfull." << endl;
+
+    return 0;
+}
+
+
+int Checking::orderChecks()
+{
+    balance -= 15;
+    cout << "Transaction Successfull" << endl;
+    return 0;
 }

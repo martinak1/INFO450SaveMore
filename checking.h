@@ -21,5 +21,6 @@ class Checking : public Account
 
         // methods
         int withdraw(double sum);
+        int orderChecks();
 };
 

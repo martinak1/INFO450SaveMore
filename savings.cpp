@@ -40,7 +40,7 @@ int Savings::AssessInterest()
    else
       interest = .01;
 
-  balance += (balance * interest);
+  balance += balance * (interest/12);
 
   return 0; 
 }
@@ -63,7 +63,7 @@ int Savings::withdraw(double sum)
    cout << "\nTransaction successfull. A $2.00 fee was applied for withdrawing"
         << "from a savings account" << endl;
 
-   balance -= balance - sum - 2;                          
+   balance -= (sum + 2);                          
 
    return 0;
 }

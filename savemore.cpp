@@ -10,40 +10,48 @@ using namespace std;
 
 int main()
 {
-    //Create a new savings account  with a 10K opening balance
+    cout << "\nCreated a new savings account with a 10K opening balance" << endl;
     Savings savings(10000);
 
-    //Create a new checking account with a 6K opening balance
+    cout << "\nCreated a new checking account with a 6K opening balance" << endl;
     Checking checking(6000);
 
-    //Create a new CD account  with a 3 year term and a 10K opening balance
+    cout << "\nCreated a new CD account with a 3 year term and a 10K opening balance"
+         << endl;
     CertDeposit cd(10000, 3);
 
-    //Calculate monthly interest for the savings account
+    cout << "\nCalculated monthly interest for the savings account" << endl;
     savings.AssessInterest();
 
-    //Calculate  the monthly interest for the CD account 
+    cout << "\nCalculated the monthly interest for the CD account" << endl;
     cd.AssessInterest();
 
-    //Order checks for the checking account
+    cout << "\nOrder checks for the checking account" << endl;
+    checking.orderChecks();
 
 
-    //Display the attributes for  each account
+    cout << "\nDisplaying the attributes for each account" << endl;
+    cout << "\nsavings" << endl;
     savings.display();
+    cout << "\nchecking" << endl;
     checking.display();
+    cout << "\ncd" << endl;
     cd.display();
 
-    //Withdraw $200 from checking
+    cout << "\nWithdrawing $200 from checking" << endl;
     checking.withdraw(200);
 
-    //Withdraw $1000 from Savings
+    cout << "\nWithdrawing $1000 from Savings" << endl;
     savings.withdraw(1000);
 
-    //Perform an early withdrawal of $2000 from the CD account
+    cout << "\nPerforming an early withdrawal of $2000 from the CD account" << endl;
     cd.withdraw(2000);
 
-    //Display the account attributes for  each account
+    cout << "\nDisplaying the account attributes for each account" << endl;
+    cout << "\nsavings" << endl;
     savings.display();
+    cout << "\nchecking" << endl;
     checking.display();
+    cout << "\ncd" << endl;
     cd.display();
 }

@@ -9,12 +9,18 @@ using namespace std;
 CertDeposit::CertDeposit() : Account()
 {
     term = 0;
+    interest = .05f;
 }
 
 
 CertDeposit::CertDeposit(double bal, int trm) : Account(bal)
 {
     term = trm;
+
+    if(term == 5)
+        interest = .1f;
+    else
+        interest = .05f;
 }
 
 
@@ -32,7 +38,7 @@ int CertDeposit::AssessInterest()
         return -1; 
     }
 
-    balance += interest * balance;
+    balance += (interest/12) * balance;
     return 0;
 }
 
@@ -65,4 +71,5 @@ int CertDeposit::display()
          << "\n\tBalance:\t$"  << balance
          << "\n\tInterest:\t" << interest
          << endl;
+    return 0;
 }
