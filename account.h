@@ -1,8 +1,8 @@
 // Base class of Savings, Checking, and Certificate
 // Contains the minimum variables and methods required for a bank account
 
-#ifndef PET_H
-#define PET_H
+#ifndef ACCOUNT_H
+#define ACCOUNT_H
 
 
 class Account
