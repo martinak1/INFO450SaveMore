@@ -57,7 +57,7 @@ int CertDeposit::withdraw(double sum)
         return -1; 
     }
 
-    cout << "Transaction successfull. A fee of 10% of your current balance was"
+    cout << "Transaction successfull. A fee of 10% of your current balance was "
          << "applied due to a pre-mature withdrawl." << endl;
 
     balance -= sum + (balance * .1);
